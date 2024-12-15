@@ -1,0 +1,196 @@
+/* login.css */
+
+/* Overall Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f3f1; /* Light beige background for the page */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px); /* เพิ่มเอฟเฟกต์เบลอพื้นหลัง */
+  }  
+  
+  /* Login Container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* ให้คอนเทนเนอร์ทั้งสองยืดเต็มความสูง */
+    height: 100%;
+    padding: 20px;
+    gap: 0; /* ลบช่องว่างระหว่าง .login-card และ .login-side-card */
+  }
+  
+  /* Login Card */
+  .login-card {
+    background-color: #c8b59d; /* Light beige/brownish background */
+    border-radius: 12px;
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(0); /* ให้เริ่มจากตำแหน่งเริ่มต้น */
+    transition: transform 0.3s ease-in-out;
+    height: 100; /* ให้ความสูงเต็ม */
+    animation: popupAnimation 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column; /* ให้เนื้อหาภายในจัดระเบียบเป็นคอลัมน์ */
+  }
+  
+  /* Login Image */
+  .login-image {
+    display: block; /* ทำให้รูปภาพเป็น block element */
+    margin-left: auto; /* จัดระยะห่างซ้ายให้เท่ากัน */
+    margin-right: auto; /* จัดระยะห่างขวาให้เท่ากัน */
+    width: 150px; /* กำหนดขนาดของรูป */
+    height: auto; /* ทำให้ภาพไม่บิดเบี้ยว */
+    margin-bottom: 10px; /* เพิ่มระยะห่างจากข้อความ */
+    object-fit: cover; /* ครอบรูปให้เต็มขนาด */
+  }
+
+  .logo-login {
+    display: block; /* ทำให้เป็น block สำหรับการจัดตำแหน่ง */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางในแนวนอน */
+    max-width: 50px; /* ปรับขนาดให้พอดี */
+    height: auto; /* รักษาอัตราส่วน */
+    margin-bottom: 20px; /* เพิ่มช่องว่างระหว่างโลโก้กับข้อความ */
+  }
+  
+  
+  /* Login Side Card */
+  .login-side-card {
+    background-color: #c8b59d; /* Light beige/brownish background */
+    border-radius: 12px;
+    width: 400px;
+    height: 100; /* ให้ความสูงเต็ม */
+    padding: 0; /* ลบ padding ออกเพื่อให้รูปครอบเต็มพื้นที่ */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(0); /* ให้เริ่มจากตำแหน่งเริ่มต้น */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
+    animation: popupAnimation 0.5s ease-in-out;
+  }
+  
+  /* Side Image */
+  .login-side-image {
+    display: block; /* ทำให้รูปภาพเป็น block element */
+    width: 100; /* กำหนดให้รูปครอบคลุมพื้นที่ทั้งหมด */
+    height: 100; /* ให้รูปมีความสูงเต็ม */
+    object-fit: cover; /* ครอบรูปให้เต็มพื้นที่โดยไม่ให้บิดเบี้ยว */
+    object-position: center; /* จัดตำแหน่งของรูปให้อยู่ตรงกลาง */
+  }
+  
+  /* Title */
+  .login-title {
+    color: #5a4f44; /* Darker brown for text */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #5a4f44; /* Dark brown border */
+    border-radius: 8px;
+    background-color: #f5f3f1;
+    font-size: 16px;
+    color: #5a4f44;
+    transition: border 0.3s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #c8b59d; /* Focus border color (light beige/brownish) */
+  }
+  
+  /* Error Message */
+  .input-error {
+    border-color: #d9534f; /* Red border for error input */
+  }
+  
+  .error-message {
+    color: #d9534f; /* Red color for error message */
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Button */
+  .login-button {
+    background-color: #5a4f44; /* Dark brown button */
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  .login-button:hover {
+    background-color: #3e362c; /* Darker brown on hover */
+  }
+  
+  /* Footer */
+  .login-footer {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .register-link {
+    color: #5a4f44; /* Dark brown color */
+    text-decoration: none;
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
+  .logo-side {
+    display: block; /* ทำให้เป็น block element */
+    margin-left: auto; /* จัดระยะห่างซ้ายให้เท่ากัน */
+    margin-right: auto; /* จัดระยะห่างขวาให้เท่ากัน */
+    width: 100px; /* กำหนดขนาดความกว้างของรูป (สามารถปรับขนาดตามต้องการ) */
+    height: auto; /* ให้ความสูงของรูปสัมพันธ์กับความกว้าง */
+  }
+  
+  /* Optional Popup Style */
+  @keyframes popupAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column; /* ให้จัดแนวเป็นคอลัมน์สำหรับมือถือ */
+    }
+    .login-card, .login-side-card {
+      width: 100%; /* ให้ทั้งสองคอนเทนเนอร์เต็มหน้าจอ */
+      height: auto; /* ปรับความสูงให้เหมาะสม */
+    }
+  }
+  
